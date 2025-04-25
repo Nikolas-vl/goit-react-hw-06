@@ -1,0 +1,27 @@
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 1px black;
+  max-width: 240px;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn{
+  height: 25px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
