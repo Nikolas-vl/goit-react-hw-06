@@ -21,10 +21,6 @@ const App = () => {
 
   const foundContacts = allContacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
 
-  const handleAddContact = newContact => {
-    setAllContacts(prev => [...prev, newContact]);
-  };
-
   const deleteContact = contactId => {
     setAllContacts(prev => {
       return prev.filter(contact => contact.id !== contactId);
@@ -38,7 +34,7 @@ const App = () => {
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm onAddContact={handleAddContact} />
+      <ContactForm />
       <SearchBox value={filter} onFilter={setFilter} />
       <ContactList contacts={foundContacts} onDelete={deleteContact} />
     </div>
