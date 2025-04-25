@@ -21,12 +21,6 @@ const App = () => {
 
   const foundContacts = allContacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
 
-  const deleteContact = contactId => {
-    setAllContacts(prev => {
-      return prev.filter(contact => contact.id !== contactId);
-    });
-  };
-
   useEffect(() => {
     localStorage.setItem('allContacts', JSON.stringify(allContacts));
   }, [allContacts]);
@@ -36,7 +30,7 @@ const App = () => {
       <h1>Phonebook</h1>
       <ContactForm />
       <SearchBox value={filter} onFilter={setFilter} />
-      <ContactList contacts={foundContacts} onDelete={deleteContact} />
+      <ContactList />
     </div>
   );
 };
